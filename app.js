@@ -5,9 +5,9 @@ const crypto = require("crypto")
 const app = express()
 
 // let appPort = 8080;
-let appPort = process.env.PORsT || 1710;
+let appPort = process.env.PORT || 1710;
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
 
 app.get('/hello', (req, res) => {
   res.send('Hello World of Node.js by Gamechai')
