@@ -3,8 +3,8 @@ const express = require('express')
 
 const app = express()
 
-const appPort = 8080;
-
+// let appPort = 8080;
+let appPort = process.env.PORT || 1710;
 
 app.get('/', (req, res) => {
   res.send('Hello World of Node.js by Gamechai')
@@ -57,9 +57,7 @@ app.get('/bot/exchange-rate', (req, res) => {
       // process.stdout.write( ${res.result.data} )
     })
 
-
     console.log(`*** Res Data : \r\n${res.data_detail}`);
-
   })
 
   req.on('error', error => {
@@ -67,12 +65,7 @@ app.get('/bot/exchange-rate', (req, res) => {
   })
 
   req.end();
-
 })
-
-
-
-
 
 // -----------------------------------------------
 
